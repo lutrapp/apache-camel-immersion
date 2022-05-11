@@ -4,9 +4,8 @@ import org.apache.camel.Exchange;
 import org.apache.camel.Processor;
 
 public class ProcessorDirectB implements Processor {
-
-    public void process(Exchange exchange) throws Exception{
-        exchange.getMessage().setBody("direct-b-id-processor");
+    @Override
+    public void process(Exchange exchange) throws Exception {
+        exchange.getMessage().setBody("direct-b-id");
     }
-
 }

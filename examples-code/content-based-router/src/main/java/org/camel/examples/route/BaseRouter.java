@@ -13,10 +13,12 @@ public class BaseRouter extends RouteBuilder {
 
     @Override
     public void configure() {
-        from("timer:base-route?period={{timer.period}}").routeId("timer:base-route-id")
+        from("timer:base-route?period={{timer.period}}")
+                .routeId("timer-base-route-id")
                 .setHeader("foo", constant("bar"))
                 .to("direct:a")
-                .end();
+        .end();
+
     }
 
 }
